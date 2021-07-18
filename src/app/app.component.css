@@ -13,4 +13,30 @@
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
+  padding: 1%;
+}
+
+#links-card > span > a {
+  width: 1vw;
+}
+
+#links-card > span > a > img {
+  width: 1vw;
+}
+
+#links-card > span {
+  margin: .2vw;
+}
+
+#links-card.mat-card {
+  padding-bottom: .5%;
+}
+
+#to-photo {
+  position: absolute;
+  margin-right: auto;
+  right: 1%;
+  top: 100%;
+  text-align: center;
+  transform: translateY(-125%);
 }

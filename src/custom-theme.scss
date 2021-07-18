@@ -9,6 +9,40 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+/* For use in src/lib/core/theming/_palette.scss */
+$md-white: (
+  50 : #ffffff,
+  100 : #e8e8e8,
+  200 : #d9d9d9,
+  300 : #c9c9c9,
+  400 : #bebebe,
+  500 : #b2b2b2,
+  600 : #ababab,
+  700 : #a2a2a2,
+  800 : #999999,
+  900 : #8a8a8a,
+  A100 : #ffffff,
+  A200 : #fdeeee,
+  A400 : #ffb9b9,
+  A700 : #ffa0a0,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
@@ -23,7 +57,7 @@ $bxkr-warn: mat.define-palette(mat.$red-palette);
 $bxkr-theme: mat.define-light-theme((
   color: (
     primary: $bxkr-primary,
-    accent: $bxkr-accent,
+    accent: $md-white,
     warn: $bxkr-warn,
   )
 ));

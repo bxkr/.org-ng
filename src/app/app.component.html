@@ -1,6 +1,9 @@
 <div id=background>
   <mat-card id=links-card>
     Приветик.<br>
-    <span *ngFor="let link of links | keyvalue; index as i"><span *ngIf="i >= 1"> | </span><a [href]="link.value" [innerText]="link.key"></a></span>
+    <span *ngFor="let link of links | keyvalue"><a [href]="link.value[0]"><img [src]="link.value[1]" [alt]="link.key" /></a></span>
   </mat-card>
+  <button mat-fab id=to-photo (click)="openDialog()">
+    <mat-icon>photo_camera</mat-icon>
+  </button>
 </div>
