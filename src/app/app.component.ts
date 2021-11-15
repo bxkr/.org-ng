@@ -10,7 +10,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 export class AppComponent {
   constructor(public dialog: MatDialog) {}
   links = {
-    'GitHub': ['https://github.com/bxkr/.ru', '../assets/github.svg'],
+    'GitHub': ['https://github.com/bxkr/.org', '../assets/github.svg'],
     'VK': ['https://vk.com/qikel', '../assets/vk.svg'],
     'last.fm': ['https://last.fm/user/blaxkr', '../assets/lastfm.svg'],
     'Steam': ['https://steamcommunity.com/id/qikel/', '../assets/steam.svg']
