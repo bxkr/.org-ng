@@ -1,8 +1,8 @@
 #background {
   --s: 15vmin;
   --p: calc(var(--s) / 2);
-  --c1: skyblue;
-  --c2: aquamarine;
+  --c1: hotpink;
+  --c2: violet;
   --c3: white;
   --bg: var(--c3);
   --d: 10000ms;
