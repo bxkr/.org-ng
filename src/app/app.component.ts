@@ -1,6 +1,13 @@
-import {Component} from '@angular/core';
-import {MatDialog} from "@angular/material/dialog";
-import {MatSnackBar} from "@angular/material/snack-bar";
+import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { HttpClient } from '@angular/common/http';
+
+interface Switch {
+  icon: string,
+  alt: string,
+  template?: string
+}
 
 @Component({
   selector: 'app-root',
@@ -8,12 +15,37 @@ import {MatSnackBar} from "@angular/material/snack-bar";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private http: HttpClient) {}
   links = {
     'GitHub': ['https://github.com/bxkr/.org', '../assets/github.svg'],
     'VK': ['https://vk.com/qikel', '../assets/vk.svg'],
     'last.fm': ['https://last.fm/user/blaxkr', '../assets/lastfm.svg'],
     'Steam': ['https://steamcommunity.com/id/qikel/', '../assets/steam.svg']
+  }
+  switches: Switch[] = [
+    {
+      icon: 'landscape',
+      alt: 'Главная'
+    },
+    {
+      icon: 'info',
+      alt: 'Обо мне',
+      template: 'info.html'
+    },
+    {
+      icon: 'category',
+      alt: 'Портфолио',
+      template: 'portfolio.html'
+    }
+  ]
+  showCard = false;
+  cardContent = String();
+
+  changeCard(template: string): void {
+    this.showCard = true;
+    this.http.get(`assets/templates/${template}`, {responseType: 'text'}).subscribe(v => {
+      this.cardContent = v
+    })
   }
 
   openDialog(): void {

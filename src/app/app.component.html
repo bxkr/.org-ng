@@ -1,9 +1,14 @@
-<div id=background>
-  <mat-card id=links-card>
-    Приветик.<br>
-    <span *ngFor="let link of links | keyvalue"><a [href]="link.value[0]"><img [src]="link.value[1]" [alt]="link.key" /></a></span>
-  </mat-card>
-  <button mat-fab id=to-photo (click)="openDialog()">
-    <mat-icon>photo_camera</mat-icon>
-  </button>
-</div>
+<main id=background>
+  <div *ngIf="false">
+    <mat-card id=super-card class=center *ngIf=showCard [innerHTML]=cardContent></mat-card>
+    <mat-button-toggle-group id=switch-group>
+      <mat-button-toggle class=switch *ngFor="let info of switches; index as i" [matTooltip]=info.alt
+                         [checked]="i === 0" (change)="info.template ? changeCard(info.template!) : showCard = false">
+        <mat-icon>{{info.icon}}</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+    <button mat-fab id=to-photo (click)=openDialog()>
+      <mat-icon>photo_camera</mat-icon>
+    </button>
+  </div>
+</main>

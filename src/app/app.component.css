@@ -1,35 +1,143 @@
 #background {
-  background-image: url("https://sun9-13.userapi.com/impg/27L8gDNJ7gz9417nY2cCX0IPKIuCb_svyenm5Q/Kg2keEDhd-U.jpg?size=2557x1920&quality=96&sign=94f1b5a24304e1b32627c61917b3d96a");
-  background-position: center;
-  background-size: cover;
+  --s: 15vmin;
+  --p: calc(var(--s) / 2);
+  --c1: skyblue;
+  --c2: aquamarine;
+  --c3: white;
+  --bg: var(--c3);
+  --d: 10000ms;
+  --e: cubic-bezier(0.76, 0, 0.24, 1);
+
+  background-color: var(--bg);
+  background-image: linear-gradient(45deg, var(--c1) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--c1) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--c2) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--c2) 75%);
+  background-size: var(--s) var(--s);
+  background-position: calc(var(--p) * 1) calc(var(--p) * 0),
+    calc(var(--p) * -1) calc(var(--p) * 1),
+    calc(var(--p) * 1) calc(var(--p) * -1),
+    calc(var(--p) * -1) calc(var(--p) * 0);
+  animation: color var(--d) var(--e) infinite,
+    position var(--d) var(--e) infinite;
+
   width: 100%;
   height: 100vh;
+  display: flex;
 }
 
-#links-card {
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-  padding: 1%;
+@keyframes color {
+  0%,
+  25% {
+    --bg: var(--c3);
+  }
+  26%,
+  50% {
+    --bg: var(--c1);
+  }
+  51%,
+  75% {
+    --bg: var(--c3);
+  }
+  76%,
+  100% {
+    --bg: var(--c2);
+  }
 }
 
-#links-card > span > a {
-  width: 1vw;
+@keyframes position {
+  0% {
+    background-position: calc(var(--p) * 1) calc(var(--p) * 0),
+      calc(var(--p) * -1) calc(var(--p) * 1),
+      calc(var(--p) * 1) calc(var(--p) * -1),
+      calc(var(--p) * -1) calc(var(--p) * 0);
+  }
+  25% {
+    background-position: calc(var(--p) * 1) calc(var(--p) * 4),
+      calc(var(--p) * -1) calc(var(--p) * 5),
+      calc(var(--p) * 1) calc(var(--p) * 3),
+      calc(var(--p) * -1) calc(var(--p) * 4);
+  }
+  50% {
+    background-position: calc(var(--p) * 3) calc(var(--p) * 8),
+      calc(var(--p) * -3) calc(var(--p) * 9),
+      calc(var(--p) * 2) calc(var(--p) * 7),
+      calc(var(--p) * -2) calc(var(--p) * 8);
+  }
+  75% {
+    background-position: calc(var(--p) * 3) calc(var(--p) * 12),
+      calc(var(--p) * -3) calc(var(--p) * 13),
+      calc(var(--p) * 2) calc(var(--p) * 11),
+      calc(var(--p) * -2) calc(var(--p) * 12);
+  }
+  100% {
+    background-position: calc(var(--p) * 5) calc(var(--p) * 16),
+      calc(var(--p) * -5) calc(var(--p) * 17),
+      calc(var(--p) * 5) calc(var(--p) * 15),
+      calc(var(--p) * -5) calc(var(--p) * 16);
+  }
 }
 
-#links-card > span > a > img {
-  width: 1vw;
+@media (prefers-reduced-motion) {
+  body {
+    animation: none;
+  }
+}@keyframes color {
+  0%,
+  25% {
+    --bg: var(--c3);
+  }
+  26%,
+  50% {
+    --bg: var(--c1);
+  }
+  51%,
+  75% {
+    --bg: var(--c3);
+  }
+  76%,
+  100% {
+    --bg: var(--c2);
+  }
 }
 
-#links-card > span {
-  margin: .2vw;
+@keyframes position {
+  0% {
+    background-position: calc(var(--p) * 1) calc(var(--p) * 0),
+      calc(var(--p) * -1) calc(var(--p) * 1),
+      calc(var(--p) * 1) calc(var(--p) * -1),
+      calc(var(--p) * -1) calc(var(--p) * 0);
+  }
+  25% {
+    background-position: calc(var(--p) * 1) calc(var(--p) * 4),
+      calc(var(--p) * -1) calc(var(--p) * 5),
+      calc(var(--p) * 1) calc(var(--p) * 3),
+      calc(var(--p) * -1) calc(var(--p) * 4);
+  }
+  50% {
+    background-position: calc(var(--p) * 3) calc(var(--p) * 8),
+      calc(var(--p) * -3) calc(var(--p) * 9),
+      calc(var(--p) * 2) calc(var(--p) * 7),
+      calc(var(--p) * -2) calc(var(--p) * 8);
+  }
+  75% {
+    background-position: calc(var(--p) * 3) calc(var(--p) * 12),
+      calc(var(--p) * -3) calc(var(--p) * 13),
+      calc(var(--p) * 2) calc(var(--p) * 11),
+      calc(var(--p) * -2) calc(var(--p) * 12);
+  }
+  100% {
+    background-position: calc(var(--p) * 5) calc(var(--p) * 16),
+      calc(var(--p) * -5) calc(var(--p) * 17),
+      calc(var(--p) * 5) calc(var(--p) * 15),
+      calc(var(--p) * -5) calc(var(--p) * 16);
+  }
 }
 
-#links-card.mat-card {
-  padding-bottom: .5%;
+@media (prefers-reduced-motion) {
+  body {
+    animation: none;
+  }
 }
 
 #to-photo {
@@ -39,4 +147,37 @@
   top: 100%;
   text-align: center;
   transform: translateY(-125%);
+}
+
+.center {
+  position: absolute;
+  align-self: center;
+  margin-left: auto;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+#title {
+  color: white;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 500%;
+}
+
+#switch-group {
+  position: absolute;
+  height: auto;
+  margin-top: 98vh;
+  margin-left: 2vh;
+  transform: translateY(-100%);
+}
+
+.switch {
+  cursor: pointer;
+}
+
+#super-card {
+  position: absolute;
 }

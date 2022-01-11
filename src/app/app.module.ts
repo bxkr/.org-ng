@@ -10,6 +10,9 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatDialogModule} from "@angular/material/dialog";
 import {ClipboardModule} from "ngx-clipboard";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
     MatButtonModule,
     MatDialogModule,
     MatSnackBarModule,
-    ClipboardModule
+    ClipboardModule,
+    MatButtonToggleModule,
+    MatTooltipModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
